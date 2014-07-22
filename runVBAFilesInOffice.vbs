@@ -101,7 +101,7 @@ dim workbook              ' as  object
 dim vb_editor             ' as  object
 dim shell_obj             ' as  object
 dim cur_dir               ' as  string
-dim args                  ' as  string
+dim args                  ' as  string array
 dim function_name_to_call ' as  string
 dim vbs_name_to_import    ' as  string
 dim cur_param             ' as    long
