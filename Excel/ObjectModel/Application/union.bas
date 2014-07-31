@@ -1,6 +1,8 @@
 '
 '   ..\..\..\runVBAFilesInOffice.vbs -excel union -c Go
 '
+'   See also -> intersect.bas
+'
 
 public sub Go()
 
