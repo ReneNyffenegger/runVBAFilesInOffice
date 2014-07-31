@@ -10,6 +10,9 @@ the *background color*.
 [name.bas](https://github.com/ReneNyffenegger/runVBAFilesInOffice/blob/master/Excel/ObjectModel/Range/name.bas) uses the `name` property to name
 ranges.
 
+[offset.bas](https://github.com/ReneNyffenegger/runVBAFilesInOffice/blob/master/Excel/ObjectModel/Range/name.bas) creates a new range based on an original
+range that is horizontally and vertically offset.
+
 ## See also's
   [`Application.intersect`](https://github.com/ReneNyffenegger/runVBAFilesInOffice/blob/master/Excel/ObjectModel/Application/intersect.bas)
   and [`Application.union`](https://github.com/ReneNyffenegger/runVBAFilesInOffice/blob/master/Excel/ObjectModel/Application/union.bas).
