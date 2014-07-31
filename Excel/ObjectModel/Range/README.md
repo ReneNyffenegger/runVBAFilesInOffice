@@ -6,3 +6,7 @@ select the range `B3:E9`.
 
 [name.bas](https://github.com/ReneNyffenegger/runVBAFilesInOffice/blob/master/Excel/ObjectModel/Range/name.bas) uses the `name` property to name
 ranges.
+
+## See also's
+  [`Application.intersect.bas`](https://github.com/ReneNyffenegger/runVBAFilesInOffice/blob/master/Excel/ObjectModel/Application/intersect.bas)
+  and [`Application.union.bas`](https://github.com/ReneNyffenegger/runVBAFilesInOffice/blob/master/Excel/ObjectModel/Application/union.bas).
