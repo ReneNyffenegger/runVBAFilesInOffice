@@ -8,5 +8,5 @@ select the range `B3:E9`.
 ranges.
 
 ## See also's
-  [`Application.intersect.bas`](https://github.com/ReneNyffenegger/runVBAFilesInOffice/blob/master/Excel/ObjectModel/Application/intersect.bas)
-  and [`Application.union.bas`](https://github.com/ReneNyffenegger/runVBAFilesInOffice/blob/master/Excel/ObjectModel/Application/union.bas).
+  [`Application.intersect`](https://github.com/ReneNyffenegger/runVBAFilesInOffice/blob/master/Excel/ObjectModel/Application/intersect.bas)
+  and [`Application.union`](https://github.com/ReneNyffenegger/runVBAFilesInOffice/blob/master/Excel/ObjectModel/Application/union.bas).
