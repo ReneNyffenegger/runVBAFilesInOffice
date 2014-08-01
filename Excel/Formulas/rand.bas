@@ -1,6 +1,7 @@
 '
 '   ..\..\runVBAFilesInOffice.vbs -excel rand -c Go
 '
+'   Compare with -> randbetween()
 
 sub Go()
 
