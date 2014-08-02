@@ -1,7 +1,8 @@
 public sub alignShapeWithCells(shape_ as shape, address_from as string, address_to as string)
 '
 '    This sub is used in
-'      https://github.com/ReneNyffenegger/kaggle/blob/master/titanic/oracle/analyze_data/survival_rate_dep_on_age_sex_class.bas
+'      - https://github.com/ReneNyffenegger/kaggle/blob/master/titanic/oracle/analyze_data/survival_rate_dep_on_age_sex_class.bas
+'      - https://github.com/ReneNyffenegger/kaggle/blob/master/titanic/oracle/analyze_data/correlation_age_fare.bas
 '
 
      shape_.left    = range(address_from).left
