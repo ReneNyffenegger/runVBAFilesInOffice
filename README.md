@@ -5,6 +5,8 @@ Run files with Visual Basic for Application code/programms in Word, Excel or Vis
 
 ## Links
 
+[perl Win32::OLE](https://github.com/ReneNyffenegger/perl-Win32-OLE).
+
 Some examples on [ADODB](https://github.com/ReneNyffenegger/about-adodb/tree/master/Oracle) need *runVBAFilesInOffice*:
 [anonymous_block.bas](https://github.com/ReneNyffenegger/about-adodb/blob/master/Oracle/anonymous_block.bas),
 [ref_cursor.bas](https://github.com/ReneNyffenegger/about-adodb/blob/master/Oracle/ref_cursor.bas) and
