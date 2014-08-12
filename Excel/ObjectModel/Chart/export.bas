@@ -1,8 +1,8 @@
 '
-'  ..\..\..\runVBAFilesInOffice.vbs -excel export -c export
+'  ..\..\..\runVBAFilesInOffice.vbs -excel export -c export %cd%\..\..\..\Word\ObjectModel\InlineShapes\exported_chart.gif
 '
 
-public sub export()
+public sub export(file_name as string)
 
     dim row_   as integer
     dim shape_ as shape
@@ -28,7 +28,7 @@ public sub export()
     chart_.chartType = xlXYScatterSmoothNoMarkers
     chart_.setSourceData source := range(cells(1,1), cells(row_, 2))
 
-    call chart_.export(fileName := "c:\temp\exported_chart.gif", filterName := "gif")
+    call chart_.export(fileName := file_name, filterName := "gif")
 
     activeWorkbook.saved = true
 
