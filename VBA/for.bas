@@ -10,6 +10,14 @@ sub main()
 
     next x
 
+
+    for y = -1 to 1 step 0.1
+
+        selection.typeText text := y
+        selection.typeParagraph
+
+    next y
+
     activeDocument.saved = true
 
 end sub
