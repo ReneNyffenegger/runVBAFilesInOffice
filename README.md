@@ -9,7 +9,8 @@ The application in which the code is run is determined by on of the flags `-word
 `-visio`.
 
 Additionally, the flag `-wsh` can be used to add a reference to the *Windows Script Host Object Model*
-(Guid = <code>F935DC20-1CF0-11D0-ADB9-00C04FD58A0B</code>).
+(Guid = <code>F935DC20-1CF0-11D0-ADB9-00C04FD58A0B</code>). ([Windows_font-path.bas](https://github.com/ReneNyffenegger/Fonts/blob/master/Windows_font-path.bas)
+uses this flag).
 
 
 ## Links
