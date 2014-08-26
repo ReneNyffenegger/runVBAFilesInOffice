@@ -1,7 +1,16 @@
 # runVBAFilesInOffice
 
 
-Run files with Visual Basic for Application code/programms in Word, Excel or Visio.
+    runVBAFilesInOffice -excel VBS_File_One VBS_File_two ... -c Function argument_one argument_two ...
+
+Run files with *Visual Basic for Application* code/programms in Word, Excel or Visio.
+
+The application in which the code is run is determined by on of the flags `-word`, `-excel` or
+`-visio`.
+
+Additionally, the flag `-wsh` can be used to add a reference to the *Windows Script Host Object Model*
+(Guid = <code>F935DC20-1CF0-11D0-ADB9-00C04FD58A0B</code>).
+
 
 ## Links
 

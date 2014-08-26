@@ -1,11 +1,11 @@
 ' This script can be used to load *.bas files into an Office-Application (Excel, Word...)
 ' and then execute a function in that/those *.bas files.
-' 
+'
 '
 ' The syntax (in cmd.exe) is:
 '
 '   x:\foo\bar> runVBAFilesInOffice.vbs -office_application file_one file_tow -c sub_name param_1 param_2 ...
-'  
+'
 '      -office_application is one of (with leading hyphen):
 '           "-excel"
 '           "-word"
@@ -25,15 +25,15 @@
 '   English
 '   -------
 '
-'      If the error 
+'      If the error
 '
 '          Programmatic access to Visual Basic Project is not trusted
 '         (Code: 800A03EC)
 '
 '      is thrown, access should be allowed like so:
 '
-'          (Excel,...)                                               -> 
-'           Options                                                  -> 
+'          (Excel,...)                                               ->
+'           Options                                                  ->
 '           Trust Center                                             ->
 '           Trust Center Settings (Button)                           ->
 '           Macro Settings                                           ->
@@ -45,13 +45,13 @@
 '
 '        Microsoft Word: Dem programmatischen Zugriff auf das Visual Basic-Projekt wird nicht vertraut.
 '
-'     sollte auf dem Office Button (Einstellungen) in (zB) Word auf 
+'     sollte auf dem Office Button (Einstellungen) in (zB) Word auf
 '
 '   sollte auf dem Office Button in (zB) Word auf
-'      (Word-)Optionen gegangen werden              -> 
-'       Vertrauensstellungscenter                   -> 
-'       Einstellungen für Vertrauensstellungscenter -> 
-'       Einstellungen für Makros                    -> 
+'      (Word-)Optionen gegangen werden              ->
+'       Vertrauensstellungscenter                   ->
+'       Einstellungen für Vertrauensstellungscenter ->
+'       Einstellungen für Makros                    ->
 '       Zugriff auf das VBA-Projektobjektmodell vertrauen
 '   gemacht werden.
 '
@@ -63,26 +63,26 @@
 '        Code: 86DB08BA
 '
 '    sollte in
-'      Extras                    -> 
-'      Vertrauensstellungscenter -> 
+'      Extras                    ->
+'      Vertrauensstellungscenter ->
 '      Einstellungen für Makros  ->
 '    das Häckchen auf
 '      Zugriff auf das VBA-Projektobjektmodell vertrauen
 '    gesetzt werden.
-'      
+'
 
 option explicit
 
 private function PathIsRelative(path) ' {
-  
-  dim position 
+
+  dim position
   position = inStr(path, ":")
 
-  if position > 0 then 
+  if position > 0 then
      PathIsRelative = false
-  else 
+  else
      PathIsRelative =  true
-  end if 
+  end if
 
 end function ' }
 
@@ -94,7 +94,7 @@ end function ' }
 
                           ' .vbs doesn't allow to explicitely
                           '  define datatypes...
-                          '            
+                          '
 dim office_app            ' as  object
 dim office_doc            ' as  object
 dim workbook              ' as  object
@@ -114,7 +114,7 @@ cur_dir = shell_obj.currentDirectory
 
 set args = WScript.arguments
 
-if args.count < 2 then 
+if args.count < 2 then
   WScript.echo ("Insufficient number of arguments specified." & vbCrLf & "See source code for further details.")
   WScript.quit
 end if
@@ -157,7 +157,7 @@ office_app.visible = true                                                    ' |
 ' ---------                                                                  ' |
 '   Find them in the registry under HKEY_CLASSES_ROOT\TypeLib...             ' |
 '                                                                            ' |
-' Microsoft Access 11.0 Object Library:                                      ' | 
+' Microsoft Access 11.0 Object Library:                                      ' |
 ' call addReference(office_doc, "{4AFFC9A0-5F99-101B-AF4E-00AA003F0F07}")    ' |
 '                                                                            ' |
 ' Microsoft DAO 3.6 Object Library:                                          ' |
@@ -177,17 +177,26 @@ office_app.visible = true                                                    ' |
 cur_param = 1
 
 do while args(cur_param) <> "-c" ' {
-   vbs_name_to_import    = args(cur_param) & ".bas"
 
-   dim path_to_imported_file
+   if args(cur_param) = "-wsh" then
 
-   if PathIsRelative(vbs_name_to_import) then
-      path_to_imported_file = cur_dir & "\" & vbs_name_to_import
+      call addReference(office_doc, "{F935DC20-1CF0-11D0-ADB9-00C04FD58A0B}")
+
    else
-      path_to_imported_file = vbs_name_to_import
-   end if
 
-   vb_comps.import(path_to_imported_file)
+      vbs_name_to_import    = args(cur_param) & ".bas"
+
+      dim path_to_imported_file
+
+      if PathIsRelative(vbs_name_to_import) then
+         path_to_imported_file = cur_dir & "\" & vbs_name_to_import
+      else
+         path_to_imported_file = vbs_name_to_import
+      end if
+
+      vb_comps.import(path_to_imported_file)
+
+   end if
 
    cur_param = cur_param + 1
 loop ' }
