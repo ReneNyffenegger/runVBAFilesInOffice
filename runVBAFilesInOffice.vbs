@@ -184,6 +184,11 @@ do while args(cur_param) <> "-c" ' {
 
       call addReference(office_doc, "{F935DC20-1CF0-11D0-ADB9-00C04FD58A0B}")
 
+   elseif args(cur_param) = "-vbe" then
+
+    ' Microsoft Visual Basic for Application Extensibility
+      call addReference(office_doc, "{0002E157-0000-0000-C000-000000000046}") 
+
    else
 
       vbs_name_to_import    = args(cur_param) & ".bas"
