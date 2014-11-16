@@ -98,7 +98,7 @@ end function ' }
 dim office_app            ' as  object
 dim office_doc            ' as  object
 dim workbook              ' as  object
-dim vb_editor             ' as  object
+' dim vb_editor           ' as  object
 dim shell_obj             ' as  object
 dim cur_dir               ' as  string
 dim args                  ' as  string array
@@ -125,20 +125,21 @@ dim vb_comps
 if     args(0) = "-excel" then                                               ' |
                  set office_app = createObject("Excel.Application")          ' |
                  set office_doc = office_app.workbooks.add                   ' |
-                 set vb_editor  = office_app.vbe                             ' |
-                 set vb_comps   = vb_editor.activeVBProject.VBComponents     ' |
+'                set vb_editor  = office_app.vbe                             ' |
+'                set vb_comps   = vb_editor.activeVBProject.VBComponents     ' |
+'                set vb_comps   = office_doc.VBProject.VBComponents          ' |
                                                                              ' |
 elseif args(0) = "-word"  then                                               ' |
                  set office_app = createObject("Word.Application")           ' |
                  set office_doc = office_app.documents.add                   ' |
-                 set vb_editor  = office_app.vbe                             ' |
-                 set vb_comps   = office_doc.VBProject.VBComponents          ' |
+'                set vb_editor  = office_app.vbe                             ' |
+'                set vb_comps   = office_doc.VBProject.VBComponents          ' |
                                                                              ' |
 elseif args(0) = "-visio" then                                               ' |
                  set office_app = createObject("Visio.Application")          ' |
                  set office_doc = office_app.documents.add("")               ' |
-                 set vb_editor  = office_app.vbe                             ' |
-                 set vb_comps   = office_doc.VBProject.VBComponents          ' |
+'                set vb_editor  = office_app.vbe                             ' |
+'                set vb_comps   = office_doc.VBProject.VBComponents          ' |
                                                                              ' |
                  is_visio       = true                                       ' |
                                                                              ' |
@@ -148,6 +149,7 @@ else                                                                         ' |
                                                                              ' |
 end if                                                                       ' |
                                                                              ' |
+set vb_comps = office_doc.VBProject.VBComponents                             ' |
 office_app.visible = true                                                    ' |
                                                                              ' |
 '------------------------------------------------------------------------------+
