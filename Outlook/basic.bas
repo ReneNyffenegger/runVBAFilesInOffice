@@ -13,7 +13,13 @@ sub main()
 
     set outl = new outlook.application
 
+  ' Currently, only parameter for getNamespace is «MAPI».
+  '
+  ' Alternatively, «set nmsp = outl.session» would also
+  ' work.
     set nmsp = outl.getNamespace("MAPI")
+
+
     set fold = nmsp.getDefaultFolder(olFolderInbox)
     set expl = outl.explorers.add(fold, olFolderDisplayNormal)
         
