@@ -50,8 +50,8 @@
 '   sollte auf dem Office Button in (zB) Word auf
 '      (Word-)Optionen gegangen werden              ->
 '       Vertrauensstellungscenter                   ->
-'       Einstellungen für Vertrauensstellungscenter ->
-'       Einstellungen für Makros                    ->
+'       Einstellungen fÃ¼r Vertrauensstellungscenter ->
+'       Einstellungen fÃ¼r Makros                    ->
 '       Zugriff auf das VBA-Projektobjektmodell vertrauen
 '   gemacht werden.
 '
@@ -65,8 +65,8 @@
 '    sollte in
 '      Extras                    ->
 '      Vertrauensstellungscenter ->
-'      Einstellungen für Makros  ->
-'    das Häckchen auf
+'      Einstellungen fÃ¼r Makros  ->
+'    das HÃ¤ckchen auf
 '      Zugriff auf das VBA-Projektobjektmodell vertrauen
 '    gesetzt werden.
 '
@@ -122,6 +122,10 @@ end if
 dim vb_comps
 
 '   ---  Start Office Application and VB-Editor (corresp +/- Alt-F11)   -------+
+'                                                                              |
+'      Unfortunately, it seems that outlook does not expose access to        ' |
+'      VBComponents                                                          ' |
+'                                                                            ' |
 if     args(0) = "-excel" then                                               ' |
                  set office_app = createObject("Excel.Application")          ' |
                  set office_doc = office_app.workbooks.add                   ' |
@@ -184,6 +188,11 @@ do while args(cur_param) <> "-c" ' {
 
       call addReference(office_doc, "{F935DC20-1CF0-11D0-ADB9-00C04FD58A0B}")
 
+   elseif args(cur_param) = "-ol" then
+
+    ' Outlook
+      call addReference(office_doc, "{00062FFF-0000-0000-C000-000000000046}")
+      
    elseif args(cur_param) = "-vbe" then
 
     ' Microsoft Visual Basic for Application Extensibility
@@ -281,7 +290,7 @@ sub addReference(obj, guid)
      if      err.number   =  -2147319779  then
 
      '       TODO:
-     '       In german, the error message is «Objektbibliothek nicht registriert»
+     '       In german, the error message is Â«Objektbibliothek nicht registriertÂ»
 
      elseif  err.number <> 32813 then
 
