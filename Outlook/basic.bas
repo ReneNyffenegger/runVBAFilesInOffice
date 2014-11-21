@@ -23,10 +23,10 @@ sub main()
     set fold = nmsp.getDefaultFolder(olFolderInbox)
     set expl = outl.explorers.add(fold, olFolderDisplayNormal)
         
-    expl.Display
-  ' expl.Activate
+    expl.display
+  ' expl.activate
 
-  ' outl.Quit
+  ' outl.quit
 
     activeWorkbook.saved = true
 
