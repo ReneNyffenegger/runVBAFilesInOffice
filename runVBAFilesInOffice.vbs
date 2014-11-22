@@ -200,6 +200,13 @@ do while args(cur_param) <> "-c" ' {
     ' Microsoft Visual Basic for Application Extensibility
       call addReference(office_doc, "{0002E157-0000-0000-C000-000000000046}") 
 
+   elseif args(cur_param) = "-ge" then
+
+    ' Google Earth
+    ' See https://github.com/ReneNyffenegger/about-GoogleEarth/tree/master/automation
+
+      call addReference(office_doc, "{3476FAB2-687F-4EA6-9AC2-88D72DC7D7FC}")
+
    else
 
       vbs_name_to_import    = args(cur_param) & ".bas"
