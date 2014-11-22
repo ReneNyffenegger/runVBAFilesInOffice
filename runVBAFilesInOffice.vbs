@@ -186,6 +186,8 @@ do while args(cur_param) <> "-c" ' {
 
    if args(cur_param) = "-wsh" then
 
+    ' See https://github.com/ReneNyffenegger/about-wsh
+
       call addReference(office_doc, "{F935DC20-1CF0-11D0-ADB9-00C04FD58A0B}")
 
    elseif args(cur_param) = "-ol" then
