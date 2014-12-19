@@ -4,8 +4,6 @@
 
 sub main()
 
-    dim connector as shape
-
     set shape = activeDocument.shapes.addLine(20, 50, 400, 200)
 
     shape.line.weight        = 5#
