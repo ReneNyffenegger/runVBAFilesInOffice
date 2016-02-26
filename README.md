@@ -21,3 +21,5 @@ Some examples on [ADODB](https://github.com/ReneNyffenegger/about-adodb/tree/mas
 [anonymous_block.bas](https://github.com/ReneNyffenegger/about-adodb/blob/master/Oracle/anonymous_block.bas),
 [ref_cursor.bas](https://github.com/ReneNyffenegger/about-adodb/blob/master/Oracle/ref_cursor.bas) and
 [stored_procedure.bas](https://github.com/ReneNyffenegger/about-adodb/blob/master/Oracle/stored_procedure.bas).
+
+[about Excel](https://github.com/ReneNyffenegger/about-Excel)
