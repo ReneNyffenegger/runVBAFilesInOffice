@@ -1,6 +1,5 @@
 # runVBAFilesInOffice
 
-
     runVBAFilesInOffice -excel VBS_File_One VBS_File_two ... -c Function argument_one argument_two ...
 
 Run files with *Visual Basic for Application* code/programms in Word, Excel or Visio.
@@ -14,6 +13,8 @@ uses this flag).
 
 
 ## Links
+
+Some notes on [my homepage](https://renenyffenegger.ch/notes/development/languages/VBA/runVBAFilesInOffice)
 
 [perl Win32::OLE](https://github.com/ReneNyffenegger/perl-Win32-OLE).
 
